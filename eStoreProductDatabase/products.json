@@ -1,8 +1,1 @@
-[
-    {
-        "num": "1234",
-        "name": "Resistor",
-        "quantity": "123",
-        "imgPath": "./resistor.jpg"
-    }
-]
+[{"num":"1224","name":"test"},{"num":"1224","name":"testfasd"},{"num":"1224","name":"testfasdasdfasdf"}]

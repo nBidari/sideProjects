@@ -4,7 +4,7 @@ const chalk = require('chalk')
 const addProduct = (num, name, imgPath) => {
 	const products = loadProducts()
 
-	const duplicates = products.find((product) => product.name = name)
+	const duplicates = products.find((product) => product.name === name)
 
 	if (!duplicates) {
 		products.push({
@@ -25,7 +25,7 @@ const addProduct = (num, name, imgPath) => {
 const updateProduct = (quantity, name, imgPath) => {
 	const products = loadProducts()
 
-	const product = products.find((note) => note.name = name)
+	const product = products.find((product) => product.name === name)
 
 	if (product) {
 		product.quantity = quantity
@@ -38,6 +38,19 @@ const updateProduct = (quantity, name, imgPath) => {
 	}
 
 	saveProducts(products)
+}
+
+const removeProduct = (name) => {
+	const products = loadProducts()
+	const productsToKeep = products.find((product) => product.name !== name)
+
+	if (products.length > productsToKeep.length) { //Main cases
+		console.log(chalk.green.bold.inverse("Product removed!"))
+		saveProducts(productsToKeep)
+	}else {
+		console.log(chalk.bold.red.inverse("ERROR!!!"))
+		console.log(chalk.red.bold("Product name not found!!!"))
+	}
 }
 
 const loadProducts = () => {
@@ -58,5 +71,6 @@ const saveProducts = (product) => {
 
 module.exports = {
 	addProduct: addProduct,
-	updateProduct: updateProduct
+	updateProduct: updateProduct,
+	removeProduct: removeProduct
 }

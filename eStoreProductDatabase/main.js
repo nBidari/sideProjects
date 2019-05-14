@@ -27,6 +27,7 @@ const chalk = require('chalk')
 const yargs = require('yargs')
 
 const products = require('./product.js')
+const users = require('./users.js')
 
 //Product Add
 yargs.command({
@@ -79,7 +80,55 @@ yargs.command({
 		products.updateProduct(argv.quantity, argv.name, argv.imgPath)
 	}
 })
+
 //Product Delete
+yargs.command({
+	command: 'remove',
+	describe: 'Removing Product',
+	builder: {
+		name: {
+			describe: 'Product Name',
+			demandOption: true,
+			type: 'string'
+		}
+	},
+	handler (argv) {
+		products.removeProduct(argv.name)
+	}
+})
+
+
+//USERS
+
+//User Add
+yargs.command({
+	command: 'add',
+	describe: 'Adding User',
+	builder: {
+		name: {
+			describe: 'User Name',
+			demandOption: true,
+			type: 'string'
+		},
+		email: {
+			describe: 'User E-mail',
+			demandOption: true,
+			type: 'string'
+		},
+		password: {
+			describe: 'User Password',
+			demandOption: true,
+			type: 'string'
+		}
+	},
+	handler (argv) {
+		products.addProduct(argv.num, argv.name, argv.imgPath)
+	}
+})
+
+//User Update
+//User Remove
+//User Ban (includes remove)
 
 
 yargs.parse()
