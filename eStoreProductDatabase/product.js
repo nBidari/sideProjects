@@ -13,8 +13,8 @@ const addProduct = (num, name, imgPath) => {
 			imgPath: imgPath
 		})
 
-		console.log(chalk.green.inverse("New product added!"))
 		saveProducts(products)
+		console.log(chalk.green.inverse("New product added!"))
 	}else {
 		console.log(chalk.bold.red.inverse("ERROR!!!"))
 		console.log(chalk.red.bold("Product name already exists!!!"))
@@ -45,8 +45,8 @@ const removeProduct = (name) => {
 	const productsToKeep = products.find((product) => product.name !== name)
 
 	if (products.length > productsToKeep.length) { //Main cases
-		console.log(chalk.green.bold.inverse("Product removed!"))
 		saveProducts(productsToKeep)
+		console.log(chalk.green.bold.inverse("Product removed!"))
 	}else {
 		console.log(chalk.bold.red.inverse("ERROR!!!"))
 		console.log(chalk.red.bold("Product name not found!!!"))

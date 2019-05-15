@@ -31,7 +31,7 @@ const users = require('./users.js')
 
 //Product Add
 yargs.command({
-	command: 'add',
+	command: 'addProduct',
 	describe: 'Adding Product',
 	builder: {
 		num: {
@@ -57,7 +57,7 @@ yargs.command({
 
 //Product Update
 yargs.command({
-	command: 'update',
+	command: 'updateProduct',
 	describe: 'Updating Product',
 	builder: {
 		quantity: {
@@ -83,7 +83,7 @@ yargs.command({
 
 //Product Delete
 yargs.command({
-	command: 'remove',
+	command: 'removeProduct',
 	describe: 'Removing Product',
 	builder: {
 		name: {
@@ -102,7 +102,7 @@ yargs.command({
 
 //User Add
 yargs.command({
-	command: 'add',
+	command: 'userAdd',
 	describe: 'Adding User',
 	builder: {
 		name: {
@@ -122,13 +122,32 @@ yargs.command({
 		}
 	},
 	handler (argv) {
-		products.addProduct(argv.num, argv.name, argv.imgPath)
+		users.addUser(argv.name, argv.email, argv.password)
 	}
 })
 
 //User Update
 //User Remove
 //User Ban (includes remove)
+yargs.command({
+	command: 'userBan',
+	describe: 'Banning User',
+	builder: {
+		name: {
+			describe: 'User Name',
+			demandOption: true,
+			type: 'string'
+		},
+		email: {
+			describe: 'User E-mail',
+			demandOption: false,
+			type: 'string'
+		}
+	},
+	handler (argv) {
+		users.banUser(argv.name, argv.email)
+	}
+})
 
 
 yargs.parse()
