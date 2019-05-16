@@ -102,7 +102,7 @@ yargs.command({
 
 //User Add
 yargs.command({
-	command: 'userAdd',
+	command: 'addUser',
 	describe: 'Adding User',
 	builder: {
 		name: {
@@ -130,7 +130,7 @@ yargs.command({
 //User Remove
 //User Ban (includes remove)
 yargs.command({
-	command: 'userBan',
+	command: 'banUser',
 	describe: 'Banning User',
 	builder: {
 		name: {

@@ -1,1 +1,47 @@
-[{"name":"Apostolos Zezos","email":"apostolos.zezos@ucc.on.ca","pass":{"iv":"1a0c9a74fddc554cca5c0a4545d28651","encryptedData":"6fada5699bfd0e59df447a4ad60bf28f","key":{"type":"Buffer","data":[216,188,93,68,39,162,34,17,118,229,246,216,116,212,227,0,20,199,94,100,43,79,110,103,144,148,162,80,192,205,32,99]}}}]
+[
+    {
+        "name": "Stefan Ateljevic",
+        "email": "Stefan.ateljevic@ucc.on.ca",
+        "pass": {
+            "iv": "bfc8cf1c813132bd77c13f3b7985c249",
+            "encryptedData": "7fc3efe63d3df97325f35de9bb3c0e41",
+            "key": {
+                "type": "Buffer",
+                "data": [
+                    111,
+                    243,
+                    39,
+                    34,
+                    122,
+                    244,
+                    161,
+                    186,
+                    176,
+                    60,
+                    131,
+                    250,
+                    242,
+                    221,
+                    239,
+                    74,
+                    165,
+                    117,
+                    229,
+                    239,
+                    19,
+                    238,
+                    139,
+                    73,
+                    230,
+                    126,
+                    217,
+                    253,
+                    14,
+                    225,
+                    139,
+                    113
+                ]
+            }
+        }
+    }
+]
