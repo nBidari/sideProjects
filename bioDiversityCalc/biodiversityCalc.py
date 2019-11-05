@@ -34,16 +34,16 @@ num = 0
 
 #Calculating denominator
 for i in range(0,len(speciesIndividualVal)):
-	denom += speciesIndividualVal[i]*(speciesIndividualVal[i]+1)
+	denom += speciesIndividualVal[i]*(speciesIndividualVal[i]-1)
 
 #Calculating numerator
-num = numberOfSpecies*(numberOfSpecies+1)
+lenData = len(data)
+num = lenData*(lenData-1)
 
 print(num)
 print(denom)
 
 srd = num/denom
-relBioDiversity = srd/numberOfSpecies
 
 
 #Output for Simpsons reciprocal diversity index
@@ -51,7 +51,6 @@ print(outputData)
 print("\n######################################\n")
 print("The number of different species were: " + str(numberOfSpecies))
 print("\nThe Simpson Reciprocal Index of the dataset was " + str(srd))
-print("\nThe relative biodiversity of " + fileName + " is " + str(round(relBioDiversity * 100, 1000)) + "%.")
 
 
 ######Summary Table#########
